@@ -12,8 +12,7 @@ data class PokemonResponse(
         parcel.readInt(),
         parcel.readString(),
         TODO("sprites")
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
@@ -34,3 +33,10 @@ data class PokemonResponse(
         }
     }
 }
+
+data class Sprites(
+    val back_default: String,
+    val back_shiny: String,
+    val front_default: String,
+    val front_shiny: String,
+)

@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 class RetrofitInstance {
     companion object {
-        val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+        private val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 
         private val retro by lazy{
             val logging = HttpLoggingInterceptor()
@@ -21,7 +21,7 @@ class RetrofitInstance {
                 .addConverterFactory(MoshiConverterFactory.create(moshi)).client(client).build()
         }
 
-        val api by lazy{
+        val api: PokemonCall by lazy{
             retro.create(PokemonCall::class.java)
         }
     }

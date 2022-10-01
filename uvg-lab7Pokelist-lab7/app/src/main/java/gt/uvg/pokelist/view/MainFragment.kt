@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.pokelist.R
 import gt.uvg.pokelist.api.RetrofitInstance
-import gt.uvg.pokelist.databinding.FragmentMainBinding
 import gt.uvg.pokelist.model.Result
 import gt.uvg.pokelist.model.PokemonResponseList
 
@@ -21,10 +20,6 @@ import retrofit2.Call
 
 
 class MainFragment: Fragment() {
-
-    private var _binding: FragmentMainBinding? = null
-
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,5 +55,4 @@ class MainFragment: Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
     }
-
 }
